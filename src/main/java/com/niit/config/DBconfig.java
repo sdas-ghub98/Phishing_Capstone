@@ -21,6 +21,7 @@ import com.niit.model.OrderDetail;
 import com.niit.model.Products;
 import com.niit.model.Supplier;*/
 //import com.niit.model.User;
+import com.niit.model.UserInputPhishing;
 
 @Configuration
 @ComponentScan("com.niit")
@@ -52,6 +53,7 @@ public class DBconfig {
 			//lsfb.addAnnotatedClass(Category.class);
 			//lsfb.addAnnotatedClass(User.class);
 			lsfb.addAnnotatedClass(Url.class);
+			lsfb.addAnnotatedClasses(UserInputPhishing.class);
 			//lsfb.addAnnotatedClass(Supplier.class);
 			//lsfb.addAnnotatedClass(Products.class);
 			//lsfb.addAnnotatedClass(Cart.class);

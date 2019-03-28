@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.model.UserInputPhishing;
 
-@Repository("urlDAO")
+@Repository("uid")
 @Transactional
 public class UserInputDaoImpl implements UserInputDao 
 {
@@ -35,5 +35,17 @@ public class UserInputDaoImpl implements UserInputDao
 			e.printStackTrace();
 		}
 		return false;
+	}
+	public boolean createAndCheckTable(UserInputPhishing uip)
+	{
+		try
+		{
+			sf.getCurrentSession().save(uip);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 	}
 }

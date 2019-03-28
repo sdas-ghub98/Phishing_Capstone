@@ -72,6 +72,7 @@ public class homeController {
 		url1.setQuery(query);
 		url1.setRef(ref);
 		urlDAO.addURLr(url1);*/
+		
 		m.addAttribute("UserURL",url);
 		UserInputPhishing uip = new UserInputPhishing();
 		uip.setPhishingURL(url);	
