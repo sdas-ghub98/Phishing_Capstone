@@ -46,11 +46,10 @@
 		<li style="font-family:Georgia;"><a href="adminlogin"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp; Admin Login &nbsp;&nbsp; </a>
 	</ul>
 </nav>
-	<center><img src="resources/logo.png" alt="Doppelganger Logo" height="150px" width="150px"></center>
+	<center><img src="resources/logo.png" alt="Doppelganger Logo" height="300px" width="200px"></center>
 	<h3 style="font-family:Trebuchet MS; text-align:center;"><i>The ultimate phishing detector</i></h3>
 <br>
-<hr width=100%>
-<br><br>
+<br>
 	<div class="container-fluid">
 		<div class="form-group">
 		<form action="url2" method="Post" name="UserInput" onsubmit="return validateUserInput()">

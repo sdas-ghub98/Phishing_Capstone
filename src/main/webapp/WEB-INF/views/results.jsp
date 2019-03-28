@@ -10,14 +10,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<center><img src="resources/logo.png" alt="Doppelganger Logo" height="200px" width="200px"></center>
+<center><img src="resources/logo.png" alt="Doppelganger Logo" height="300px" width="200px"></center>
+<br>
 <div class="container">
+	<br><br>
 	<div class="jumbotron">
 	<h2>URL entered by you : </h2> 
 	<p>${UserURL}
 	</div>
 	<br>
-	
 	<h3>What our directory search says...?</h3><br>
 	<%//If URL is found in the database %>
 	<div class="row">

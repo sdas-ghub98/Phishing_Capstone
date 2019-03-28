@@ -73,19 +73,24 @@ public class homeController {
 		url1.setRef(ref);
 		urlDAO.addURLr(url1);*/
 		
-		m.addAttribute("UserURL",url);
 		UserInputPhishing uip = new UserInputPhishing();
-		uip.setPhishingURL(url);	
+		uip.setPhishingURL(url);
+		boolean res=false;
 		try
 			{
-				boolean res = uid.checkUserInputURL(uip);
+				res = uid.checkUserInputURL(uip);
 				m.addAttribute("result",res);
 			}
 			catch(Exception e)
 			{
 				e.printStackTrace();
 			}
-			
+		if(res)
+			System.out.println("It is a phishing website!!");
+		else
+			System.out.println("It is not a phishing website!!");
+		m.addAttribute("UserURL",url);
+		
 		return "loading";
 	}
 	

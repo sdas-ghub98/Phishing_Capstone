@@ -11,7 +11,7 @@
 }
 
 .radar {
-  background: url(/resources/radar.png) no-repeat 50% 50%;
+  background: url(https://gtms03.alicdn.com/tps/i3/TB1Vet9IVXXXXbuapXXb2YSIVXX-567-567.png) no-repeat 50% 50%;
   width: 284px;
   height: 284px;
   position: relative;
@@ -129,6 +129,6 @@
   		<div class="shadow"></div>
   		<div class="shadow1"></div>
 	</div>
-	<%response.setHeader("Refresh", "10;url=results");%>
+	<%response.setHeader("Refresh", "5;url=results");%>
 </body>
 </html>
