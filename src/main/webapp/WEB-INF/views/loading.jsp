@@ -11,7 +11,7 @@
 }
 
 .radar {
-  background: url(https://gtms03.alicdn.com/tps/i3/TB1Vet9IVXXXXbuapXXb2YSIVXX-567-567.png) no-repeat 50% 50%;
+  background: url(/resources/radar.png) no-repeat 50% 50%;
   width: 284px;
   height: 284px;
   position: relative;

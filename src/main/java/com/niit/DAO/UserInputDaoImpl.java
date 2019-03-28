@@ -5,24 +5,29 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.niit.model.UserInputPhishing;
 
+@Repository("urlDAO")
+@Transactional
 public class UserInputDaoImpl implements UserInputDao 
 {
+	@Autowired
+	SessionFactory sf;
 	public boolean checkUserInputURL(UserInputPhishing uip)
 	{
 		try
 		{
-			Class.forName("org.h2.Driver");
-			String url = "jdbc:h2:tcp://localhost/~/test";
-			String user = "sa";
-			String pass = "";
-			Connection con = DriverManager.getConnection(url,user,pass);
-			String sql = "Select PhishingURL from UserInputPhishing where PhishingURL = "+ uip.getPhishingURL();
-			PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			ps.close();
-			if(rs.getString(2) != null)
+			Session session = sf.openSession();
+			Query q = session.createQuery("Select PhishingURL from UserInputPhishing where PhishingURL="+uip.getPhishingURL());
+			if(q != null )
 				return true;
 		}
 		catch(Exception e)

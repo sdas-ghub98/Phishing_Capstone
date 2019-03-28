@@ -16,8 +16,6 @@ public class URLDaoImpl implements URLDao {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	
-	
 	public boolean addURLr(Url url) {
 		try 
 		{
