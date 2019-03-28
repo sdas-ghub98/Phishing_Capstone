@@ -132,9 +132,6 @@
 			<version>4.2.1.RELEASE</version>
 		</dependency>
 
-
-
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -153,11 +150,11 @@
 			<version>1.2</version>
 		</dependency>
 
-		<dependency>
+		<!-- dependency>
 			<groupId>com.niit</groupId>
-			<artifactId>MyBazar</artifactId>
+			<artifactId>PhishingBackend</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency-->
 
 
 	</dependencies>
@@ -175,8 +172,6 @@
 			</plugin>
 
 		</plugins>
-
-
 
 	</build>
 </project>

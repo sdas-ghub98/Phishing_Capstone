@@ -10,16 +10,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<center><img src="resources/logo.png" alt="Doppelganger Logo" height="150px" width="150px"></center>
+<center><img src="resources/logo.png" alt="Doppelganger Logo" height="200px" width="200px"></center>
 <div class="container">
 	<div class="jumbotron">
 	<h2>URL entered by you : </h2> 
-	<p><% //Put the user input URL here %>
+	<p>${UserURL}
 	</div>
 	<br>
 	
 	<h3>What our directory search says...?</h3><br>
-	<%// If the URL is found in the database %>
+	<%//If URL is found in the database %>
 	<div class="row">
 		<p> Your URL is <button class="btn btn-danger">Unsafe to visit</button><br>
 		<ul type="disc">

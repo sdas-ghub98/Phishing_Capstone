@@ -129,6 +129,6 @@
   		<div class="shadow"></div>
   		<div class="shadow1"></div>
 	</div>
-	<%response.setHeader("Refresh", "10;url=/results.jsp");%>
+	<%response.setHeader("Refresh", "10;url=results");%>
 </body>
 </html>

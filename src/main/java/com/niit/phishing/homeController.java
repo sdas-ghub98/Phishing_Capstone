@@ -1,7 +1,7 @@
 package com.niit.phishing;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+//import java.net.MalformedURLException;
+//import java.net.URL;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.Cookie;
@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.DAO.URLDao;
-import com.niit.model.Url;
+import com.niit.DAO.UserInputDao;
+import com.niit.DAO.UserInputDaoImpl;
+//import com.niit.model.Url;
+import com.niit.model.UserInputPhishing;
 
 
 @Controller
@@ -24,6 +27,7 @@ public class homeController {
 	
 	@Autowired
 	URLDao urlDAO;
+	UserInputDao uid;
 	
 	@RequestMapping("/")
 	public String HomePage(Model m)
@@ -36,12 +40,9 @@ public class homeController {
 		return "adminlogin";
 	}
 	@RequestMapping("/url2")
-	public String ForwardPage(@RequestParam("url") String url, Model m) throws MalformedURLException
+	public String ForwardPage(@RequestParam("url") String url, Model m) 
 	{
-		
-		try
-		{
-			URL aURL = new URL(url);
+			/*URL aURL = new URL(url);
 			String protocol = aURL.getProtocol();
 			String authority = aURL.getAuthority();
 			String host = aURL.getHost();
@@ -50,8 +51,6 @@ public class homeController {
 			String query = aURL.getQuery();
 			String filename = aURL.getFile();
 			String ref = aURL.getRef();
-		
-			
 			
 			System.out.println("protocol = "+protocol);
 	        System.out.println("authority = " + aURL.getAuthority());
@@ -62,8 +61,9 @@ public class homeController {
 	        System.out.println("filename = " + aURL.getFile());
 	        System.out.println("ref = " + aURL.getRef());
 		
+		
 		Url url1 = new Url();
-		url1.setAuthority(authority);
+	    url1.setAuthority(authority);
 		url1.setFile(filename);
 		url1.setHost(host);
 		url1.setPath(path);
@@ -71,13 +71,20 @@ public class homeController {
 		url1.setProtocol(protocol);
 		url1.setQuery(query);
 		url1.setRef(ref);
-		urlDAO.addURLr(url1);
-		}
-		catch(MalformedURLException me)
-		{
-			System.out.println("Input is not in a valid URL format!!!");
-		}
-		
+		urlDAO.addURLr(url1);*/
+		m.addAttribute("UserURL",url);
+		UserInputPhishing uip = new UserInputPhishing();
+		uip.setPhishingURL(url);	
+		try
+			{
+				boolean res = uid.checkUserInputURL(uip);
+				m.addAttribute("result",res);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			
 		return "loading";
 	}
 	
